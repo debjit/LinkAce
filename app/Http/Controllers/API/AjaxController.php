@@ -36,13 +36,13 @@ class AjaxController extends Controller
             // Properly format the results
             $tags = $tags->map(function ($item) {
                 return [
-                    'value' => $item->name,
+                    'id' => $item->name,
                     'text' => $item->name,
                 ];
             });
         }
 
-        return response()->json($tags);
+        return response()->json(['results' => $tags]);
     }
 
     /**

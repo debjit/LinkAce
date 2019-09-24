@@ -15,7 +15,7 @@ mix.js('resources/assets/js/fontawesome.js', 'assets/dist/js')
 mix.combine([
   'node_modules/jquery/dist/jquery.min.js',
   'node_modules/bootstrap/dist/js/bootstrap.min.js',
-  'node_modules/selectize/dist/js/standalone/selectize.min.js'
+  'node_modules/select2/dist/js/select2.min.js'
 ], 'public/assets/dist/js/dependencies.js')
   .version();
 

@@ -118,8 +118,6 @@
 
 @push('scripts')
     <script>
-        $('#parent_category').selectize({
-            create: false
-        });
+        $('#parent_category').select2();
     </script>
 @endpush

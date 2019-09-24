@@ -91,8 +91,13 @@
 
                     <div class="form-group">
                         <label for="tags">@lang('tag.tags')</label>
-                        <input name="tags" id="tags" type="text" placeholder="@lang('tag.tags')"
-                            value="{{ old('tags') }}">
+                        <select name="tags[]" id="tags" class="form-control" multiple="multiple">
+                            @if(old('tags'))
+                                @foreach(old('tags') as $tag)
+                                    <option value="{{ $tag }}" selected="selected">{{ $tag }}</option>
+                                @endforeach
+                            @endif
+                        </select>
 
                         @if ($errors->has('url'))
                             <p class="invalid-feedback" role="alert">
@@ -148,9 +153,7 @@
 
 @push('scripts')
     <script>
-        $('#category_id').selectize({
-            create: false
-        });
+      $('#category_id').select2();
     </script>
     @include('models.links.partials.tags-js')
 @endpush

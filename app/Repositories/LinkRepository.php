@@ -74,18 +74,17 @@ class LinkRepository
 
     /**
      * @param Link   $link
-     * @param string $tags
+     * @param array<string> $tags
      */
-    protected static function updateTagsForLink(Link $link, string $tags): void
+    protected static function updateTagsForLink(Link $link, array $tags): void
     {
         if (empty($tags)) {
             return;
         }
 
-        $parsed_tags = explode(',', $tags);
         $new_tags = [];
 
-        foreach ($parsed_tags as $tag) {
+        foreach ($tags as $tag) {
             $new_tag = Tag::firstOrCreate([
                 'user_id' => auth()->user()->id,
                 'name' => $tag,

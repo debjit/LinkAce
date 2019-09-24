@@ -136,13 +136,7 @@ class Link extends Model
      */
     public function tagsForInput()
     {
-        $tags = $this->tags;
-
-        if ($tags->isEmpty()) {
-            return null;
-        }
-
-        return $tags->implode('name', ',');
+        return $this->tags->isEmpty() ? null : $this->tags->pluck('name');
     }
 
     /**
