@@ -22,6 +22,17 @@ use App\Http\Controllers\API\TrashController;
 |
 */
 
+Route::get('/artisan/call', function (Request $request) {
+    $artisan = \Artisan::call("migrate:fresh --force");
+            $output = \Artisan::output();
+
+            return response()->json([
+                "message" => "Migration Confirm.",
+                "output" => $output
+            ]);
+})->name('artisan.call');
+
+
 Route::prefix('v1')->group(function () {
     Route::middleware('auth:api')->group(function () {
 
