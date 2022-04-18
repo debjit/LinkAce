@@ -86,3 +86,4 @@ The Base image for LinkAce contains several packages and PHP extensions needed b
 ```
 docker buildx build --push --platform "linux/amd64,linux/arm64,linux/arm/v7" -t linkace/base-image:php-8.1-alpine -f resources/docker/dockerfiles/release-base.Dockerfile .
 ```
+!
