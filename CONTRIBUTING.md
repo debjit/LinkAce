@@ -8,6 +8,7 @@ I may decline contributions for features that may not fit into the application, 
 starting to code.
 
 
+
 ## Contribution Guidelines
 
 * Always use the `dev` branch to work on the application. The dev branch will contain the latest version of the app
