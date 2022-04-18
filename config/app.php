@@ -131,7 +131,7 @@ return [
     |
     */
 
-    'guest_access' => env('GUEST_ACCESS', false),
+    'guest_access' => env('GUEST_ACCESS', true),
 
     /**
     |--------------------------------------------------------------------------
