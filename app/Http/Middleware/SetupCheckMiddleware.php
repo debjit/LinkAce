@@ -22,6 +22,9 @@ class SetupCheckMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+        // bypass complete setup
+        return $next($request);
+
         if (config('app.key') === self::GENERIC_APP_KEY) {
             $envContent = File::get(base_path('.env'));
             $envContent = preg_replace('/APP_KEY=(.*)\S/', 'APP_KEY=' . $this->generateRandomAppKey(), $envContent);
